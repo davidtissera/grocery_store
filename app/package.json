@@ -39,5 +39,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^shared(.*)$": "<rootDir>/src/shared$1",
+      "^@core/components(.*)$": "<rootDir>/src/@core/components$1"
+    }
+  },
+  "devDependencies": {
+    "react-app-rewired": "^2.1.8",
+    "tsconfig-paths-webpack-plugin": "^3.5.2"
   }
 }
