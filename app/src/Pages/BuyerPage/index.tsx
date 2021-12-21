@@ -1,6 +1,6 @@
 import { Example } from "./components";
 
-export default function BuyerPage(props) {
+export default function BuyerPage() {
   return (
     <>
       <Example name="Mock name" />
