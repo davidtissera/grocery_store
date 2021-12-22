@@ -2,7 +2,7 @@ import Table from "@core/components/Table";
 import { IProductQuantity } from "shared/mocks";
 import {
   calculateDiscountPrice,
-} from "../helpers/calculateDiscountPrice";
+} from "../helpers";
 
 export interface IShoppingList {
   products: IProductQuantity[];
