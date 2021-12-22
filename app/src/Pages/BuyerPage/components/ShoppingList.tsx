@@ -17,7 +17,7 @@ export default function ShoppingList(props: IShoppingList) {
 
   const columns = [
     { name: "name", header: "Item" },
-    { name: "quantity", header: "Quantity" },
+    { name: "quantity", header: "Quantity", Cell: (cellValue: string) => parseInt(cellValue, 10) },
     {
       name: "price",
       header: "Price",
