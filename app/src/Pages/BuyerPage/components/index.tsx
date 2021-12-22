@@ -9,4 +9,4 @@ export {
 // Export your interfaces here:
 export type {
   IExample,
-}
+};

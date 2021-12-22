@@ -6,5 +6,5 @@ export default function BuyerPage() {
       <Example name="Mock name" />
       Buyer Page
     </>
-  )
+  );
 }

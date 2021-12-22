@@ -1,12 +1,12 @@
-// Import your components and interfaces here
-import Example, { IExample } from "./Example";
+import GroceryPricesTable, { IGroceryPricesTable } from "./GroceryPricesTable";
+import Table, { ITable } from "./Table";
 
-// Export your components here:
 export {
-  Example,
+  Table,
+  GroceryPricesTable
 };
 
-// Export your interfaces here:
 export type {
-  IExample,
-}
+  IGroceryPricesTable,
+  ITable
+};
