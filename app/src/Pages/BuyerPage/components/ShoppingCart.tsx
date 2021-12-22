@@ -31,27 +31,42 @@ export default function ShoppingCart(props: IShoppingCart) {
 
   return (
     <form name="shopping-cart-form" onSubmit={handleSubmit}>
-      {productsToBuy.map((product) => {
-        return (
-          <div key={product.name}>
-            <div style={{ margin: "5px 0" }}>
-              <label htmlFor={product.name}>{product.name}</label>
-            </div>
-            <div>
-              <input
-                id={product.name}
-                name={product.name}
-                defaultValue={0}
-                type="number"
-                min={0}
-              />
-            </div>
+      <div className="container">
+        <div className="row justify-content-md-center">
+          {productsToBuy.map((product) => {
+            return (
+              <div key={product.name} className="col col-lg-2 mb-3">
+                <label className="form-label" htmlFor={product.name}>{product.name}</label>
+                <input
+                  className="form-control"
+                  id={product.name}
+                  name={product.name}
+                  defaultValue={0}
+                  type="number"
+                  min={0}
+                />
+              </div>
+            );
+          })}
+          <div
+            className="col col-lg-2 mt-3"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <button
+              role="button"
+              type="submit"
+              className="btn btn-primary"
+              style={{ width: "100%" }}
+            >
+              {isSubmitting ? <div className="spinner-border spinner-border-sm text-light" role="status" /> : "Buy"}
+            </button>
           </div>
-        );
-      })}
-      <button role="button" type="submit" style={{ margin: "10px 0px" }}>
-        {isSubmitting ? "Your order is being processed..." : "Buy"}
-      </button>
+        </div>
+      </div>
     </form>
   );
 }
