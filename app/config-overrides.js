@@ -1,5 +1,7 @@
-const webpack = require('webpack');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
+const webpack = require("webpack");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
   webpack: function override(config, _) {
@@ -8,8 +10,8 @@ module.exports = {
       if (current instanceof webpack.DefinePlugin) {
         config.plugins[i] = new webpack.DefinePlugin({
           ...current,
-          'process.env.API_URL': JSON.stringify(process.env.API_URL || 'https://localhost/api'),
-        })
+          "process.env.API_URL": JSON.stringify(process.env.API_URL || "https://localhost/api"),
+        });
       }
     }
     return {
@@ -24,6 +26,6 @@ module.exports = {
       plugins: [
         ...config.plugins,
       ],
-    }
+    };
   },
-}
+};
