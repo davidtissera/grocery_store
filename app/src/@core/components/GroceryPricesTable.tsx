@@ -20,7 +20,7 @@ export default function GroceryPricesTable(props: IGroceryPricesTable) {
       discount_cost: discount,
     } = product;
 
-    if (!discount) {
+    if (!discount || !amount) {
       return product;
     }
 
