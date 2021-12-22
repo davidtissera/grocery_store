@@ -1,10 +1,10 @@
-import { Example } from "./components";
+import GroceryPricesTable from "@core/components/GroceryPricesTable";
+import { products } from "shared/mocks";
 
 export default function BuyerPage() {
   return (
     <>
-      <Example name="Mock name" />
-      Buyer Page
+      <GroceryPricesTable products={products} />
     </>
   );
 }
