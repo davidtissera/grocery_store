@@ -47,6 +47,10 @@
     }
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "eslint": "^8.5.0",
+    "eslint-plugin-react": "^7.27.1",
     "react-app-rewired": "^2.1.8",
     "tsconfig-paths-webpack-plugin": "^3.5.2"
   }
