@@ -24,16 +24,21 @@ export default function BuyerPage() {
   };
 
   return (
-    <>
+    <div className="container-md mt-5">
       <div className="container-md">
+        <h2 className="mb-4">Current prices of Grocery Store</h2>
         <GroceryPricesTable products={products} />
       </div>
-      <div className="container-md">
+      <div className="container-md mt-5">
+        <h5 className="mb-4" style={{ textAlign: "center" }}>Add your favourite products</h5>
         <ShoppingCart productsToBuy={products} handleBuyProducts={handleBuyProducts} />
       </div>
-      <div className="container-md">
-        <ShoppingList products={productsQuantity} />
-      </div>
-    </>
+      {productsQuantity.length > 0 && (
+        <div className="container-md mt-5 mb-5">
+          <h3 className="mb-4">Your shopping list</h3>
+          <ShoppingList products={productsQuantity} />
+        </div>
+      )}
+    </div>
   );
 }
