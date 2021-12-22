@@ -2,7 +2,6 @@ import { screen } from "@testing-library/dom";
 import GroceryPricesTable, { IGroceryPricesTable } from "../GroceryPricesTable";
 import { products } from "shared/mocks";
 import { getComponent } from "shared/testUtils";
-import { IProduct } from "shared/mocks";
 
 describe("GroceryPricesTable", () => {
   const defaultProps: IGroceryPricesTable = {
@@ -24,7 +23,7 @@ describe("GroceryPricesTable", () => {
 
   describe("When products are provided", () => {
     it("should render sale price cells according 'products' prop", () => {
-      const overrideProps: IProduct = {
+      const overrideProps: IGroceryPricesTable = {
         products,
       };
       getComponent({ Component: GroceryPricesTable, defaultProps, overrideProps });
