@@ -11,6 +11,10 @@ export interface IProductsQuantityTable {
 export default function ProductsQuantityTable(props: IProductsQuantityTable) {
   const { products } = props;
 
+  if (products.length <= 0) {
+    return null;
+  }
+
   const columns = [
     { name: "name", header: "Item" },
     { name: "quantity", header: "Quantity" },
