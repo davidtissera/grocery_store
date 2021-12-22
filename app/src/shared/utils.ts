@@ -1,4 +1,8 @@
-// Define util functions here
-const utils = {};
-
-export default utils;
+export const simulatePromiseDelay = async (
+  willPromiseFail: boolean,
+  delay: number
+) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(willPromiseFail ? reject : resolve, delay);
+  });
+};
