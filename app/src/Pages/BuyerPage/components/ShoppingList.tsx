@@ -4,11 +4,11 @@ import {
   calculateDiscountPrice,
 } from "../helpers/calculateDiscountPrice";
 
-export interface IProductsQuantityTable {
+export interface IShoppingList {
   products: IProductQuantity[];
 }
 
-export default function ProductsQuantityTable(props: IProductsQuantityTable) {
+export default function ShoppingList(props: IShoppingList) {
   const { products } = props;
 
   if (products.length <= 0) {

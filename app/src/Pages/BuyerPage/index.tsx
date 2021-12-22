@@ -2,7 +2,7 @@ import GroceryPricesTable from "@core/components/GroceryPricesTable";
 import { useState } from "react";
 import { IProduct, IProductQuantity, products } from "shared/mocks";
 import { simulatePromiseDelay } from "shared/utils";
-import ProductsQuantityTable from "./components/ProductsQuantityTable";
+import ShoppingList from "./components/ShoppingList";
 import ShoppingCart from "./components/ShoppingCart";
 
 export default function BuyerPage() {
@@ -22,7 +22,7 @@ export default function BuyerPage() {
     <>
       <GroceryPricesTable products={products} />
       <ShoppingCart productsToBuy={products} handleBuyProducts={handleBuyProducts} />
-      <ProductsQuantityTable products={productsQuantity} />
+      <ShoppingList products={productsQuantity} />
     </>
   );
 }
