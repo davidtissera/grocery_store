@@ -1,8 +1,6 @@
 import { IProductQuantity } from "shared/mocks";
 
-export const calculateDiscountPrice: (product: IProductQuantity) => number = (
-  product
-) => {
+export default function calculateDiscountPrice(product: IProductQuantity) {
   if (!product.amount_of_products_with_discount || !product.discount_cost) {
     const price = product.cost * product.quantity;
 
@@ -18,4 +16,4 @@ export const calculateDiscountPrice: (product: IProductQuantity) => number = (
   }
 
   return product.quantity * product?.discount_cost;
-};
+}
