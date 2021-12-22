@@ -25,9 +25,15 @@ export default function BuyerPage() {
 
   return (
     <>
-      <GroceryPricesTable products={products} />
-      <ShoppingCart productsToBuy={products} handleBuyProducts={handleBuyProducts} />
-      <ShoppingList products={productsQuantity} />
+      <div className="container-md">
+        <GroceryPricesTable products={products} />
+      </div>
+      <div className="container-md">
+        <ShoppingCart productsToBuy={products} handleBuyProducts={handleBuyProducts} />
+      </div>
+      <div className="container-md">
+        <ShoppingList products={productsQuantity} />
+      </div>
     </>
   );
 }
