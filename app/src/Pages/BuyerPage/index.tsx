@@ -14,8 +14,13 @@ export default function BuyerPage() {
       ...product,
       quantity: formValues[product.name],
     });
+    const hasProductQuantityPredicate = (product: IProductQuantity) => product.quantity > 0;
 
-    setProductsQuantity(products.map(transformProductQuantity));
+    const productsWithQuantity = products
+      .map(transformProductQuantity)
+      .filter(hasProductQuantityPredicate);
+
+    setProductsQuantity(productsWithQuantity);
   };
 
   return (
