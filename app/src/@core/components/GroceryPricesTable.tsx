@@ -33,9 +33,6 @@ export default function GroceryPricesTable(props: IGroceryPricesTable) {
   const rows = products.map(transformSalePriceProduct);
 
   return (
-    <>
-      <h1>Local Grocery Store Pricing Table</h1>
-      <Table columns={columns} rows={rows} />
-    </>
+    <Table columns={columns} rows={rows} />
   );
 }

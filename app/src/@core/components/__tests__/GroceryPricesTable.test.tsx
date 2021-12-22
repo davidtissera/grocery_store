@@ -13,14 +13,6 @@ describe("GroceryPricesTable", () => {
     expect(container).toBeDefined();
   });
 
-  it("should render heading title", () => {
-    getComponent({ Component: GroceryPricesTable, defaultProps });
-
-    const heading = screen.getByRole("heading", { name: "Local Grocery Store Pricing Table" });
-
-    expect(heading).toBeInTheDocument();
-  });
-
   describe("When products are provided", () => {
     it("should render sale price cells according 'products' prop", () => {
       const overrideProps: IGroceryPricesTable = {
