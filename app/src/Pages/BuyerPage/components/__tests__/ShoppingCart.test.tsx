@@ -29,22 +29,23 @@ describe("ShoppingCart", () => {
       expect(screen.getByLabelText("Apple")).toBeDefined();
     });
   
-    it("should call handleBuyProducts when clicking submit", async () => {
+    it("should not call handleBuyProducts when clicking submit and form has empty values", async () => {
       getComponent({ Component: ShoppingCart, defaultProps, overrideProps });
 
-      const submitButton = screen.getByRole("button", { name: "Buy" });
+      const submitButton = screen.getByRole("button", { name: "Click to Buy!" });
       await waitFor(() => {
         fireEvent.click(submitButton);
       });
       
-      expect(handleBuyProducts).toHaveBeenCalledTimes(1);
+      expect(submitButton).toBeDisabled();
+      expect(handleBuyProducts).not.toHaveBeenCalled();
     });
 
     it("should change input values and call handleBuyProducts with corresponding values", async () => {
       getComponent({ Component: ShoppingCart, defaultProps, overrideProps });
       const milkInput = screen.getByLabelText("Milk");
       const breadInput = screen.getByLabelText("Bread");
-      const submitButton = screen.getByRole("button", { name: "Buy" });
+      const submitButton = screen.getByRole("button", { name: "Click to Buy!" });
 
       fireEvent.change(milkInput, { target: { value: "20" }});
       fireEvent.change(breadInput, { target: { value: "10" }});
@@ -54,10 +55,10 @@ describe("ShoppingCart", () => {
       });
 
       expect(handleBuyProducts).toHaveBeenCalledWith({
-        "Apple": 0,
-        "Banana": 0,
-        "Bread": 10,
-        "Milk": 20,
+        "Apple": "0",
+        "Banana": "0",
+        "Bread": "10",
+        "Milk": "20",
       });
     });
   });
