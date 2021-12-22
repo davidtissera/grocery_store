@@ -37,3 +37,6 @@ $ npm start
 ```
 $ npm run test --watchAll
 ```
+
+----
+For any problems with the project initialization, please contact davidtissera94@gmail.com.
