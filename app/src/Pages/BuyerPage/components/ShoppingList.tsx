@@ -37,8 +37,8 @@ export default function ShoppingList(props: IShoppingList) {
   return (
     <div>
       <Table columns={columns} rows={rows} />
-      <div>{`Total price: $${totalWithDiscount.toFixed(2)}`}</div>
-      <div>{`You saved $${savedPrice.toFixed(2)} today.`}</div>
+      <div className="mt-2">{`Total price: $${totalWithDiscount.toFixed(2)}`}</div>
+      {savedPrice > 0 && <div className="mt-2"><b>{`You saved $${savedPrice.toFixed(2)} today.`}</b></div>}
     </div>
   );
 }
