@@ -1,7 +1,7 @@
 export type IColumn = {
   name: string;
   header: string;
-  Cell?: (cellValue: string | number) => React.ReactElement;
+  Cell?: (cellValue: any) => React.ReactNode;
 };
 
 export interface ITable {
