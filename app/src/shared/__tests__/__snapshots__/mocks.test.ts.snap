@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mocks tests products mock should match snapshot 1`] = `
+Array [
+  Object {
+    "amount_of_products_with_discount": 2,
+    "cost": 3.97,
+    "discount_cost": 2.5,
+    "name": "Milk",
+  },
+  Object {
+    "amount_of_products_with_discount": 3,
+    "cost": 2.17,
+    "discount_cost": 2,
+    "name": "Bread",
+  },
+  Object {
+    "cost": 0.99,
+    "name": "Banana",
+  },
+  Object {
+    "cost": 0.89,
+    "name": "Apple",
+  },
+]
+`;

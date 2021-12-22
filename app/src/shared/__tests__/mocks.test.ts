@@ -1,7 +1,9 @@
-import mocks from "../mocks";
+import { products } from "../mocks";
 
 describe("mocks tests", () => {
-  it("should pass", () => {
-    expect(mocks).toStrictEqual({});
+  describe("products mock", () => {
+    it("should match snapshot", () => {
+      expect(products).toMatchSnapshot();
+    });
   });
 });
