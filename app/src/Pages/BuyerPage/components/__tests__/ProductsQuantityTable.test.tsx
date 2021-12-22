@@ -12,7 +12,7 @@ describe("ProductsQuantityTable", () => {
     getComponent({ Component: ProductsQuantityTable, defaultProps });
   });
 
-  describe("When passing products", () => {
+  describe("When passing products with quantity", () => {
     const overrideProps: IProductsQuantityTable = {
       products: productsQuantity,
     };
@@ -27,6 +27,7 @@ describe("ProductsQuantityTable", () => {
     });
 
     it("should have price cells with corresponding format", () => {
+      getComponent({ Component: ProductsQuantityTable, defaultProps, overrideProps });
       const milkSalePriceCell = screen.getByRole("cell", { name: "$8.97" });
       const breadPriceCell = screen.getByRole("cell", { name: "$8.17" });
       const applePriceCell = screen.getByRole("cell", { name: "$0.89" });
