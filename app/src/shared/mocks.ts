@@ -22,3 +22,26 @@ export const products: IProduct[] = [
   { name: "Banana", cost: 0.99 },
   { name: "Apple", cost: 0.89 }
 ];
+
+export type IProductQuantity = IProduct & {
+  quantity: number;
+};
+
+export const productsQuantity: IProductQuantity[] = [
+  {
+    ...products[0],
+    quantity: 3,
+  },
+  {
+    ...products[1],
+    quantity: 4,
+  },
+  {
+    ...products[2],
+    quantity: 1,
+  },
+  {
+    ...products[3],
+    quantity: 1,
+  },
+];
