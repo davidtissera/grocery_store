@@ -24,3 +24,32 @@ Array [
   },
 ]
 `;
+
+exports[`mocks tests productsQuantity mock should match snapshot 1`] = `
+Array [
+  Object {
+    "amount_of_products_with_discount": 2,
+    "cost": 3.97,
+    "discount_cost": 2.5,
+    "name": "Milk",
+    "quantity": 3,
+  },
+  Object {
+    "amount_of_products_with_discount": 3,
+    "cost": 2.17,
+    "discount_cost": 2,
+    "name": "Bread",
+    "quantity": 4,
+  },
+  Object {
+    "cost": 0.99,
+    "name": "Banana",
+    "quantity": 1,
+  },
+  Object {
+    "cost": 0.89,
+    "name": "Apple",
+    "quantity": 1,
+  },
+]
+`;
