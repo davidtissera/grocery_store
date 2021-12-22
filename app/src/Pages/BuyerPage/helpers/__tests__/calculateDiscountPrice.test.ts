@@ -1,5 +1,5 @@
 import { IProduct, IProductQuantity } from "shared/mocks";
-import { calculateDiscountPrice } from "../calculateDiscountPrice";
+import { calculateDiscountPrice } from "../";
 
 describe("calculateDiscountPrice", () => {
   describe("When discount_cost or amount_of_items_with_discount are not present", () => {
