@@ -17,12 +17,12 @@ export default function Table(props: ITable) {
   }
 
   return (
-    <table>
+    <table className="table">
       <thead>
         <tr>
           {columns.map((column) => {
             return (
-              <th role="columnheader" key={column.name}>
+              <th scope="col" role="columnheader" key={column.name}>
                 {column.header}
               </th>
             );
