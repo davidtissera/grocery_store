@@ -39,6 +39,7 @@ export default function ShoppingCart(props: IShoppingCart) {
             return (
               <div key={product.name} className="col col-lg-2 mb-3">
                 <label className="form-label" htmlFor={product.name}>{product.name}</label>
+                <span style={{ marginLeft: "5px" }}>{product.emoji}</span>
                 <input
                   {...form.register(product.name)}
                   className="form-control"
