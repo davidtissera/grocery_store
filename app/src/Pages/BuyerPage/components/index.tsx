@@ -1,12 +1,9 @@
-// Import your components and interfaces here
-import Example, { IExample } from "./Example";
+import ShoppingCart, { IShoppingCart } from "./ShoppingCart";
 
-// Export your components here:
 export {
-  Example,
+  ShoppingCart,
 };
 
-// Export your interfaces here:
 export type {
-  IExample,
+  IShoppingCart,
 };
