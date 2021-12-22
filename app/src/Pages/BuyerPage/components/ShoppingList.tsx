@@ -16,7 +16,18 @@ export default function ShoppingList(props: IShoppingList) {
   }
 
   const columns = [
-    { name: "name", header: "Item" },
+    {
+      name: "name",
+      header: "Item",
+      Cell: (cellValue: IProductQuantity["name"]) => (
+        <>
+          {cellValue}
+          <span style={{ marginLeft: "5px" }}>
+            {products.find((product: IProductQuantity) => product.name === cellValue)?.emoji}
+          </span>
+        </>
+      ),
+    },
     { name: "quantity", header: "Quantity", Cell: (cellValue: string) => parseInt(cellValue, 10) },
     {
       name: "price",
@@ -37,10 +48,16 @@ export default function ShoppingList(props: IShoppingList) {
   return (
     <div>
       <Table columns={columns} rows={rows} />
-      <div className="mt-2">{`Total price: $${totalWithDiscount.toFixed(2)}`}</div>
+      <div className="mt-2">
+        <b className="text-decoration-underline">{`Total price: $${totalWithDiscount.toFixed(2)}`}</b>
+      </div>
       {savedPrice > 0 && (
         <div className="mt-2">
-          <b>{`You saved $${savedPrice.toFixed(2)} today.`}</b>
+          <span>
+            You saved
+            <b> ${savedPrice.toFixed(2)} </b>
+            today.
+          </span>
           <span style={{ marginLeft: "5px" }}>🥳</span>
         </div>
       )}

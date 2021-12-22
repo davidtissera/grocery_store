@@ -34,7 +34,7 @@ export default function BuyerPage() {
         <ShoppingCart productsToBuy={products} handleBuyProducts={handleBuyProducts} />
       </div>
       {productsQuantity.length > 0 && (
-        <div className="container-md mt-5 mb-5">
+        <div className="container-sm mt-5 mb-5">
           <h3 className="mb-4">Your shopping list</h3>
           <ShoppingList products={productsQuantity} />
         </div>

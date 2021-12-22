@@ -9,8 +9,25 @@ export default function GroceryPricesTable(props: IGroceryPricesTable) {
   const { products } = props;
 
   const columns = [
-    { name: "name", header: "Item" },
-    { name: "cost", header: "Unit price" },
+    {
+      name: "name",
+      header: "Item",
+      Cell: (cellValue: IProduct["name"]) => (
+        <>
+          {cellValue}
+          <span style={{ marginLeft: "5px" }}>
+            {products.find((product: IProduct) => product.name === cellValue)?.emoji}
+          </span>
+        </>
+      ),
+    },
+    { 
+      name: "cost",
+      header: "Unit price",
+      Cell: (cellValue: IProduct["cost"]) => (
+        `$${cellValue.toFixed(2)}`
+      ),
+    },
     { name: "sale_price", header: "Sale price" }
   ];
 
