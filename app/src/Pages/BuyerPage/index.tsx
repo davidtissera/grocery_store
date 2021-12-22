@@ -1,11 +1,12 @@
 import GroceryPricesTable from "@core/components/GroceryPricesTable";
 import { useState } from "react";
-import { IProduct, products } from "shared/mocks";
+import { IProduct, IProductQuantity, products } from "shared/mocks";
 import { simulatePromiseDelay } from "shared/utils";
+import ProductsQuantityTable from "./components/ProductsQuantityTable";
 import ShoppingCart from "./components/ShoppingCart";
 
 export default function BuyerPage() {
-  const [productsQuantity, setProductsQuantity] = useState<IProduct[]>([]);
+  const [productsQuantity, setProductsQuantity] = useState<IProductQuantity[]>([]);
 
   const handleBuyProducts = async (formValues: Record<IProduct["name"], number>) => {
     await simulatePromiseDelay(false, 2000);
@@ -21,6 +22,7 @@ export default function BuyerPage() {
     <>
       <GroceryPricesTable products={products} />
       <ShoppingCart productsToBuy={products} handleBuyProducts={handleBuyProducts} />
+      <ProductsQuantityTable products={productsQuantity} />
     </>
   );
 }
